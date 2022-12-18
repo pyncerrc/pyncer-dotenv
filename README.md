@@ -1,12 +1,20 @@
-# Pyncer DotEnv
-A [DotEnv](https://github.com/vlucas/phpdotenv) WriterInterface implementation to write .env values to constants.
+# Pyncer Dotenv
+A [Dotenv](https://github.com/vlucas/phpdotenv) WriterInterface implementation to write .env values to constants.
+
+## Installation
+
+Install via [Composer](https://getcomposer.org):
+
+```bash
+$ composer require pyncer/dotenv
+```
 
 ## Example
 
 ```php
 use Dotenv\Dotenv;
 use Dotenv\Repository\RepositoryBuilder;
-use Pyncer\DotEnv\ConstWriter;
+use Pyncer\Dotenv\ConstWriter;
 
 // ...
 

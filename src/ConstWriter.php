@@ -1,5 +1,5 @@
 <?php
-namespace Pyncer\DotEnv;
+namespace Pyncer\Dotenv;
 
 use Dotenv\Repository\Adapter\WriterInterface;
 use Pyncer\Exception\UnexpectedValueException;

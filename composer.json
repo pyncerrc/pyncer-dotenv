@@ -1,7 +1,7 @@
 {
     "name": "pyncer/dotenv",
     "type": "library",
-    "description": "A DotEnv WriterInterface implementation to write .env values to constants.",
+    "description": "A Dotenv WriterInterface implementation to write .env values to constants.",
     "homepage": "https://pyncer.com/dotenv",
     "require": {
         "php": ">=8.1",
@@ -11,7 +11,7 @@
     "license": "Unlicense",
     "autoload": {
         "psr-4": {
-            "Pyncer\\DotEnv\\": "src/"
+            "Pyncer\\Dotenv\\": "src/"
         }
     },
     "support": {
