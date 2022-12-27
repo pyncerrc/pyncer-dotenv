@@ -1,5 +1,5 @@
 # Pyncer Dotenv
-A [Dotenv](https://github.com/vlucas/phpdotenv) WriterInterface implementation to write .env values to constants.
+A [phpdotenv](https://github.com/vlucas/phpdotenv) implementation to read and write .env values from and to constants.
 
 ## Installation
 
@@ -14,12 +14,12 @@ $ composer require pyncer/dotenv
 ```php
 use Dotenv\Dotenv;
 use Dotenv\Repository\RepositoryBuilder;
-use Pyncer\Dotenv\ConstWriter;
+use Pyncer\Dotenv\ConstAdapter;
 
 // ...
 
 $repository = RepositoryBuilder::createWithNoAdapters()
-    ->addWriter(new ConstWriter('Vendor\\Namespace'))
+    ->addAdapter(new ConstAdapter('Vendor\\Namespace'))
     ->immutable()
     ->make();
 
