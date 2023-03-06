@@ -45,7 +45,9 @@ trait ConstWriterTrait {
             );
         }
 
-        if (defined($this->namespace . $name)) {
+        $fullName = $this->getFullName($name);
+
+        if (defined($fullName)) {
             return false;
         }
 
@@ -55,6 +57,8 @@ trait ConstWriterTrait {
             $value = false;
         } elseif ($value === 'true' || $value === '!false') {
             $value = true;
+        } elseif (str_starts_with($value, '0') && strval(intval($value)) === substr($value, 1)) {
+            $value = octdec($value);
         } elseif (strval(intval($value)) === $value) {
             $value = intval($value);
         } elseif (str_starts_with($value, '[') && str_ends_with($value, ']')) {
@@ -70,7 +74,7 @@ trait ConstWriterTrait {
             }
         }
 
-        define($this->namespace . $name, $value);
+        define($fullName, $value);
 
         return true;
     }
@@ -91,6 +95,15 @@ trait ConstWriterTrait {
         }
 
         return false;
+    }
+
+    private function getFullName(string $name): string
+    {
+        if (str_contains($name, '__')) {
+            return str_replace('__', '\\', $name);
+        }
+
+        return $this->namespace . $name;
     }
 
     private function parseArray(string $array): ?array

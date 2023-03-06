@@ -46,8 +46,10 @@ final class ConstAdapter implements AdapterInterface
             );
         }
 
-        if (defined($this->namespace . $name)) {
-            $value = constant($this->namespace . $name);
+        $fullName = $this->getFullName($name);
+
+        if (defined($fullName)) {
+            $value = constant($fullName);
 
             if ($value === null) {
                 $value = 'null';

@@ -17,5 +17,10 @@
     "support": {
         "issues": "https://github.com/pyncerrc/pyncer-dotenv/issues",
         "source": "https://github.com/pyncerrc/pyncer-dotenv"
+    },
+    "extra" : {
+        "branch-alias" : {
+            "dev-main" : "1.1-dev"
+        }
     }
 }
