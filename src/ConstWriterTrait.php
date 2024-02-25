@@ -27,6 +27,10 @@ trait ConstWriterTrait {
         }
 
         $this->namespace = $value;
+
+        if (!defined('Pyncer\ENV_NAMESPACE')) {
+            define('Pyncer\ENV_NAMESPACE', rtrim($this->namespace, '\\'));
+        }
     }
 
     /**
