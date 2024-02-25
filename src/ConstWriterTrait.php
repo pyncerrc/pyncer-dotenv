@@ -23,7 +23,7 @@ trait ConstWriterTrait {
     protected function setNamespace(string $value): void
     {
         if ($value !== '') {
-            $value = rtrim($value, '\\') . '\\';
+            $value = trim($value, '\\') . '\\';
         }
 
         $this->namespace = $value;
